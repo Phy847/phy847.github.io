@@ -1,0 +1,277 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /*(theorethisch) anpassung an die größe des bildschirms*/
+
+    @media (max-width: 700px) {
+        .flex-container {
+            position: static;
+        }
+    }
+
+    /*dunkler hintergrund für abschnitte unten wo über uns text ist*/
+
+    .dark-background {
+        background-color: rgb(73, 73, 73);
+        color: white;
+        font-size: 2vw;
+    }
+
+    .dark-background0 {
+      background-color: rgb(73, 73, 73);
+    }
+
+    /* .............................................Flexbox (leiste oben)..........................................*/
+
+
+      /*link farbe anders*/
+    .leisteoben a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .leisteoben a:hover {
+        color: #d3d3d3;
+    }
+
+    .leisteoben:hover {
+        color: #d3d3d3;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background-color: #ffffff;
+        justify-content: center;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .flex-container>div {
+        background-color: #ffffff;
+        text-align: center;
+        margin: 10px;
+        padding: 20px;
+        font-size: 30px;
+        width: 250px;
+        cursor: pointer;
+        font-family: arial;
+    }
+
+    .dropbtn {
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        font-size: 30px;
+        border: none;
+        cursor: pointer;
+        font-family: arial;
+    }
+
+    .dropdown {
+        position: relative;
+        z-index: 100;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        min-width: 200px;
+        padding: 12px 16px;
+        flex-direction: column;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #ffffff;
+    }
+
+    .container {
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .shade {
+        box-shadow: 10px 10px rgb(128, 125, 125);
+    }
+
+    /* ..................................Über uns Text......................................*/
+
+    .about {
+        font-size: 4vw;
+        
+        text-align: center;
+    }
+
+    .about:hover {
+        text-shadow: 0 0 8px rgb(0, 153, 255);
+        transition: all 0.2s ease;
+    }
+
+    .txthead {
+        font-weight: bold;
+        font-size: 2.5vw;
+        text-align: center;
+    }
+
+    .txthead:hover {
+        text-shadow: 0 0 8px rgb(0, 153, 255);
+        transition: text shadow 0.2s ease;
+    }
+
+    .txttxt {
+        font-size: 1.3vw;
+        text-align: center;
+    }
+
+    .txttxt:hover {
+        text-shadow: 0 0 8px rgb(0, 153, 255);
+        transition: text-shadow 0.2s ease;
+    }
+
+    /* .................................Impressum CSS.................................. */
+
+      .footer {
+    --g1:#1a8b31; --g2:#0f6f24; --g3:#0b5d1d; --g4:#0a4b17;                                 /* farben für den verlauf*/
+    background:
+      radial-gradient(1200px 500px at 20% 20%, rgba(255,255,255,.06), transparent 60%),         /* links oben heller punkt*/
+      radial-gradient(900px 600px at 80% 70%, rgba(0,0,0,.15), transparent 60%),                /* rechts unten dunkler punkt*/
+      linear-gradient(135deg, var(--g1), var(--g2) 35%, var(--g3) 65%, var(--g4));                /* farbverlauf schräg von links oben nach rechts unten*/
+    color:#fff;
+    padding: 40px 20px 26px;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    gap: 28px 40px;
+    grid-template-columns: repeat(4, minmax(160px,1fr));
+    align-items: start;
+  }
+
+  .col h4 {                                  /* col = column = spalte*/
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    font-weight: 700;
+    margin: 0 0 10px;
+    text-shadow: 0 1px 0 rgba(0,0,0,.35);
+  }
+
+  .col ul { list-style: none; margin: 0; padding: 0; }
+  .col li { margin: 6px 0; }
+
+  .col a {
+    color: rgba(255,255,255,.92);
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(0,0,0,.35);
+  }
+  .col a:hover { text-decoration: underline; }
+
+  /* trennlinie vor letzter spalte */
+  .col--border {
+    border-left: 2px solid rgba(255,255,255,.6);
+    padding-left: 28px;
+  }
+
+  address {
+    font-style: normal;
+    line-height: 1.6;
+  }
+
+  .legal {
+    text-align: center;
+    margin: 24px 0 0;
+    font-size: .95rem;
+    color: rgba(255,255,255,.9);
+    text-shadow: 0 1px 0 rgba(0,0,0,.35);
+  }
+
+  /*unter 900px = zwei Spalten / unter 560px = gestapelt */
+  @media (max-width: 900px){
+    .footer-inner{ grid-template-columns: repeat(2, minmax(160px,1fr)); }
+    .col--border{ border: none; padding-left: 0; }
+  }
+  @media (max-width: 560px){
+    .footer-inner{ grid-template-columns: 1fr; }
+  }
+
+    /* ------------------------------Flexbox vom Shop register------------------------------------------ */
+
+  .shopFlex {
+    display: flex;
+    height: 700px;
+    background-color: rgb(73, 73, 73);
+    justify-content: space-around;
+    flex-direction: row;
+  }
+
+  .shopFlex div {
+    background-color: white;
+    width: 800px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 30px;
+    height: 600px;
+    border: solid black;
+  }
+
+  .shopadtocart {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .shopadtocart1 {background-color: white;}
+
+  /* ------------------------------Tabelle Öffnungszeiten Kontakt----------------------------------- */
+
+
+  table, th, td {
+    border-radius: 10px !important;
+    border-collapse: collapse;
+    border: solid black;
+    padding: 10px;
+    height: auto;
+    width: auto;
+  }
+
+  tr:nth-child(1) {
+    background-color: rgb(255, 255, 255) !important;
+    text-align: center;
+    font-size: 1.8vw;
+    
+  }
+
+  tr:nth-child(2) {
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 1.8vw;
+  }
